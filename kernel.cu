@@ -42,7 +42,7 @@ __global__ void mysgemm(int m, int n, int k, const float *A, const float *B, flo
 	    
      __syncthreads();
 	    
-    for(int j=0, j<TILE_SIZE, ++j)
+    for(int j=0; j<TILE_SIZE; ++j)
 	    Cv+=M[ty][j]*N[j][tx];
 	    
     __syncthreads();
