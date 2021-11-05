@@ -80,8 +80,8 @@ int main (int argc, char *argv[])
     /*************************************************************************/
     //INSERT CODE HERE
     
-    cudaMemcpy(A_d,A_h,sizeof(float)*A_sz,cudaMempyHostToDevice);
-    cudaMemcpy(B_d,B_h,sizeof(float)*B_sz,cudaMempyHostToDevice);
+    cudaMemcpy(A_d,A_h,sizeof(float)*A_sz,cudaMemcpyHostToDevice);
+    cudaMemcpy(B_d,B_h,sizeof(float)*B_sz,cudaMemcpyHostToDevice);
     /*************************************************************************/
     
     cudaDeviceSynchronize();
@@ -102,7 +102,7 @@ int main (int argc, char *argv[])
 
     /*************************************************************************/
     //INSERT CODE HERE
-    cudaMemcpy(C_h,C_d,sizeof(float)*B_sz,cudaMempyDeviceToHost);
+    cudaMemcpy(C_h,C_d,sizeof(float)*B_sz,cudaMemcpyDeviceToHost);
     /*************************************************************************/
 
     cudaDeviceSynchronize();
