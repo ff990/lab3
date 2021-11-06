@@ -106,8 +106,7 @@ int main (int argc, char *argv[])
     // Launch kernel using standard sgemm interface ---------------------------
     printf("Launching kernel..."); fflush(stdout);
     startTime(&timer);
-    basicSgemm('N', 'N', matArow, matBcol, matBrow, 1.0f, \
-		A_d, matArow, B_d, matBrow, 0.0f, C_d, matBrow);
+    basicSgemm(matArow, matBcol, matBrow, A_d, B_d, C_d);
 
     cuda_ret = cudaDeviceSynchronize();
 	if(cuda_ret != cudaSuccess) FATAL("Unable to launch kernel");
