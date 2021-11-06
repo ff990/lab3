@@ -112,7 +112,7 @@ int main (int argc, char *argv[])
 
     printf("Verifying results..."); fflush(stdout);
 
-    //verify(A_h, B_h, C_h, matArow, matAcol, matBcol);
+    verify(A_h, B_h, C_h, matArow, matAcol, matBcol);
 
 
     // Free memory ------------------------------------------------------------
